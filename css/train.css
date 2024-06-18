@@ -1,0 +1,58 @@
+/************************************************************/
+/**
+ * Université Sorbonne Paris Nord, Programmation Web
+ * Auteurs                       : Étienne André
+ * Création                      : 2023/12/11
+ * Dernière modification         : 2024/05/21
+ */
+/************************************************************/
+
+h1 {
+	font-family : monospace;
+	font-size   : 3em;
+}
+
+/* Conteneur de boutons */
+#boutons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 20px;
+}
+
+#boutons input[type=image] {
+	height: 32px;
+	border: solid black 2px;
+	margin: 5px;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#boutons input[type=image]:disabled {
+	opacity: 0.5;
+	border: solid red 2px;
+}
+
+#boutons input[type=image]:hover:not(:disabled) {
+	transform: scale(1.1);
+	background-color: #ffcc00;
+}
+
+/* Ajoutez une animation de clignotement pour les cases des trains détruits */
+@keyframes explosion {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+}
+
+.explosion {
+	animation: explosion 0.5s forwards;
+}
